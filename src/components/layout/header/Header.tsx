@@ -6,8 +6,8 @@ import React from "react";
 function Header() {
   return (
     <header>
-      <div className="flex flex-wrap items-center justify-between bg-[#0a0f1b] p-6 px-4 sm:px-6 lg:px-[64px] shadow-md">
-        <div className="flex items-center space-x-4 mb-4 sm:mb-0">
+      <div className="flex flex-wrap items-center justify-between bg-[#0a0f1b] p-6 px-4 sm:px-6 lg:px-[64px] shadow-2xl shadow-[#008e5d]">
+        <div className="flex items-center space-x-4 mb-2 sm:mb-0">
           <Image
             src="/images/home/logo.svg"
             alt="Logo"
@@ -20,7 +20,7 @@ function Header() {
           </h1>
         </div>
 
-        <div className="relative flex-1 mx-4 mb-4 sm:mb-0">
+        <div className="relative flex-1 mx-4 mb-3 sm:mb-0">
           <input
             type="text"
             placeholder="Where to Stream Anything..."
@@ -53,7 +53,7 @@ function Header() {
         </div>
       </div>
 
-      <nav className="flex flex-wrap justify-between items-center px-4 sm:px-6 lg:px-[64px] bg-[#0a0f1b] text-gray-300 font-semibold py-4 shadow-inner">
+      <nav className="flex flex-wrap justify-between items-center px-4 sm:px-6 lg:px-[64px] bg-[#0a0f1b] text-gray-300 font-semibold pt-2 pb-4 shadow-inner">
         <div className="flex flex-wrap justify-center items-center space-x-4 sm:space-x-6 lg:space-x-8 mb-4 lg:mb-0">
           <Link
             href="#"
