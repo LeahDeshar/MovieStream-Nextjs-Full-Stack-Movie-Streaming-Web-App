@@ -5,7 +5,7 @@ import React from "react";
 function Main() {
   return (
     <main
-      className="relative bg-cover bg-center bg-no-repeat px-6 sm:px-16 py-16 sm:py-24 text-white"
+      className="relative bg-cover bg-center bg-no-repeat px-6 sm:px-16 py-14 sm:py-24 text-white min-h-screen flex flex-col justify-center"
       style={{
         backgroundImage: "url('/images/home/hero/hero_img.svg')",
       }}
@@ -27,15 +27,8 @@ function Main() {
           </p>
         </div>
       </div>
-      {/* <div>
-        <button>ADD YOUR SERVICES</button>
-        <div>
-          <Image src="/images/home/hero/appstore.svg" alt="appstore" />
-          <Image src="/images/home/hero/googleplay.png" alt="appstore" />
-        </div>
-      </div> */}
+
       <div className="flex flex-col items-center justify-center space-y-6 mt-10">
-        {/* Add Services Button */}
         <button className="bg-gradient-to-r from-[#00ffb3] via-[#00dc89] to-[#008e5d] px-6 py-3 rounded-full font-semibold text-black hover:shadow-lg hover:scale-105 transition-transform text-sm sm:text-base">
           ADD YOUR SERVICES
         </button>
