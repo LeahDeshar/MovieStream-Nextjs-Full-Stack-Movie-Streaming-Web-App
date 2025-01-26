@@ -3,6 +3,7 @@ import Header from "../../header/Header";
 import Footer from "../../footer/Footer";
 import Main from "./components/Main";
 import FavPick from "./components/FavPick";
+import RecommendedList from "./components/RecommendedList";
 
 function HomePage() {
   return (
@@ -24,6 +25,7 @@ function HomePage() {
       <FavPick title="DRAMA MOVIES & SHOWS" />
       <FavPick title="2024 GOLDEN GLOBE WINNERS" />
       <FavPick title="COMMEDY MOVIES AND SHOWS" />
+      <RecommendedList />
 
       <Footer />
     </div>

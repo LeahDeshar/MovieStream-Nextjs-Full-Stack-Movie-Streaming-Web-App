@@ -8,9 +8,9 @@ import "swiper/css/pagination";
 import { CardProps } from "@/types/home.types";
 const Card = ({ image, title, alt }: CardProps) => {
   return (
-    <div className="relative m-2 p-2 bg-[#1f1f1f] rounded-lg group hover:shadow-lg transition-all">
+    <div className="relative m-2  rounded-lg group hover:shadow-lg transition-all">
       <img
-        className="rounded-lg w-full h-[320px] object-cover group-hover:opacity-80 transition-all"
+        className="rounded-lg w-full h-[150px] object-cover group-hover:opacity-80 transition-all"
         src={image}
         alt={alt}
       />
@@ -25,63 +25,62 @@ function RecommendedList() {
   const recommendList = [
     {
       image:
-        "https://img.rgstatic.com/content/movie/2516246b-3157-49e8-b4a7-2cade0e84e51/poster-185.webp",
-      title: "My Old Ass",
-      alt: "My Old Ass",
+        "https://img.rgstatic.com/collections/genre/science-fiction/both/card@1x.jpg",
+      title: "Best Sci-Fi",
+      alt: "Best Sci-Fi",
+    },
+    {
+      image:
+        "https://img.rgstatic.com/collections/tag/woman-director/both/card@1x.jpg",
+      title: "Female Directors",
+      alt: "Female Directors",
+    },
+    {
+      image:
+        "https://img.rgstatic.com/collections/curated/1980s-action/movie/card@1x.jpg",
+      title: "80s Action",
+      alt: "80s Action",
+    },
+    {
+      image: "https://img.rgstatic.com/collections/tag/disney/both/card@1x.jpg",
+      title: "Disney Movies & TV",
+      alt: "Disney Movies & TV",
+    },
+    {
+      image:
+        "https://img.rgstatic.com/collections/curated/a24-movies-shows/both/card@1x.jpg",
+      title: "A24's Independent Essentials",
+      alt: "A24's Independent Essentials",
+    },
+    {
+      image:
+        "https://img.rgstatic.com/collections/genre/comedy/both/card@1x.jpg",
+      title: "Best Comedies",
+      alt: "Best Comedies",
     },
     {
       image:
         "https://img.rgstatic.com/content/movie/8261b2e1-704a-4274-b5ef-dc8f6284a0a6/poster-185.webp",
-      title: "The Tomorrow War",
-      alt: "The Tomorrow War",
+      title: "Great Movies Under 90 Minutes",
+      alt: "Great Movies Under 90 Minutes",
     },
     {
       image:
         "https://img.rgstatic.com/content/movie/0573a7b7-0eab-4a78-9bb1-a3f4b4a1cda6/poster-185.webp",
-      title: "The Tomorrow War",
-      alt: "The Tomorrow War",
+      title: "Best Korean Films",
+      alt: "Best Korean Films",
     },
     {
       image:
         "https://img.rgstatic.com/content/movie/3ac17510-81cf-49d7-872d-c05df0ede0ee/poster-185.webp",
-      title: "The Tomorrow War",
-      alt: "The Tomorrow War",
+      title: "ReelGood's Best of the Decade",
+      alt: "ReelGood's Best of the Decade",
     },
     {
       image:
         "https://img.rgstatic.com/content/movie/0bbeb88f-fa9b-4c0a-b1ef-15c358a9a163/poster-185.webp",
-      title: "The Tomorrow War",
-      alt: "The Tomorrow War",
-    },
-    {
-      image:
-        "https://img.rgstatic.com/content/movie/2516246b-3157-49e8-b4a7-2cade0e84e51/poster-185.webp",
-      title: "My Old Ass",
-      alt: "My Old Ass",
-    },
-    {
-      image:
-        "https://img.rgstatic.com/content/movie/8261b2e1-704a-4274-b5ef-dc8f6284a0a6/poster-185.webp",
-      title: "The Tomorrow War",
-      alt: "The Tomorrow War",
-    },
-    {
-      image:
-        "https://img.rgstatic.com/content/movie/0573a7b7-0eab-4a78-9bb1-a3f4b4a1cda6/poster-185.webp",
-      title: "The Tomorrow War",
-      alt: "The Tomorrow War",
-    },
-    {
-      image:
-        "https://img.rgstatic.com/content/movie/3ac17510-81cf-49d7-872d-c05df0ede0ee/poster-185.webp",
-      title: "The Tomorrow War",
-      alt: "The Tomorrow War",
-    },
-    {
-      image:
-        "https://img.rgstatic.com/content/movie/0bbeb88f-fa9b-4c0a-b1ef-15c358a9a163/poster-185.webp",
-      title: "The Tomorrow War",
-      alt: "The Tomorrow War",
+      title: "Detective Movies & Shows",
+      alt: "Detective Movies & Shows",
     },
   ];
 
