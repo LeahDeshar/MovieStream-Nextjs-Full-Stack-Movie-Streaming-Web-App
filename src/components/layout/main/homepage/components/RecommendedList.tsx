@@ -6,7 +6,6 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { CardProps } from "@/types/home.types";
-
 const Card = ({ image, title, alt }: CardProps) => {
   return (
     <div className="relative m-2 p-2 bg-[#1f1f1f] rounded-lg group hover:shadow-lg transition-all">
@@ -22,11 +21,8 @@ const Card = ({ image, title, alt }: CardProps) => {
   );
 };
 
-type FaveCardProps = {
-  title: string;
-};
-const FavPick = ({ title }: FaveCardProps) => {
-  const movies = [
+function RecommendedList() {
+  const recommendList = [
     {
       image:
         "https://img.rgstatic.com/content/movie/2516246b-3157-49e8-b4a7-2cade0e84e51/poster-185.webp",
@@ -92,11 +88,9 @@ const FavPick = ({ title }: FaveCardProps) => {
   return (
     <div className="p-6 px-4 sm:px-6 lg:px-[64px]">
       <h2 className="text-3xl font-bold text-center text-white mb-4">
-        {title}
+        RECOMMENDED LIST
       </h2>
-      {/* <p className="text-center text-sm text-gray-400 mb-8">
-        Swipe or use arrows to see more
-      </p> */}
+
       <Swiper
         spaceBetween={5}
         slidesPerView={1}
@@ -113,7 +107,7 @@ const FavPick = ({ title }: FaveCardProps) => {
         modules={[Navigation, Pagination]}
         className="flex justify-center"
       >
-        {movies.map((movie, index) => (
+        {recommendList.map((movie, index) => (
           <SwiperSlide key={index}>
             <Card image={movie.image} title={movie.title} alt={movie.alt} />
           </SwiperSlide>
@@ -121,6 +115,5 @@ const FavPick = ({ title }: FaveCardProps) => {
       </Swiper>
     </div>
   );
-};
-
-export default FavPick;
+}
+export default RecommendedList;

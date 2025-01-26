@@ -9,7 +9,22 @@ function HomePage() {
     <div>
       <Header />
       <Main />
-      <FavPick />
+      <FavPick title="FAVE PICKS ON PRIME VIDEO" />
+      <FavPick title="TOP 10 THIS WEEK" />
+      <FavPick title="POPULAR MOVIES" />
+      <FavPick title="NEW TV SHOWS" />
+      <FavPick title="TRENDING TV SHOWS" />
+      <FavPick title="2024 EMMY NOMINEES" />
+      <FavPick title="NEW MOVIES" />
+      <FavPick title="POPULAR TV SHOWS" />
+      <FavPick title="2024 CANNES FILM FESTIVAL" />
+      <FavPick title="2024 MOST ANTICIPATED" />
+      <FavPick title="TRENDING MOVIES" />
+      <FavPick title="2024 OSCAR NOMINEES" />
+      <FavPick title="DRAMA MOVIES & SHOWS" />
+      <FavPick title="2024 GOLDEN GLOBE WINNERS" />
+      <FavPick title="COMMEDY MOVIES AND SHOWS" />
+
       <Footer />
     </div>
   );
