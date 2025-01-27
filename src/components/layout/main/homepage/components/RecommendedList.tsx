@@ -14,8 +14,10 @@ const Card = ({ image, title, alt }: CardProps) => {
         src={image}
         alt={alt}
       />
-      <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-all">
-        <p className="text-white text-lg font-semibold">{title}</p>
+      <div className="absolute inset-0 flex items-center justify-center  ">
+        <p className="text-gray-300 text-md font-semibold bg-black bg-opacity-75 text-center mx-3 rounded-md p-2">
+          {title}
+        </p>
       </div>
     </div>
   );
