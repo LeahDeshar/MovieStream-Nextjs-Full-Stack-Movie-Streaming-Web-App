@@ -5,6 +5,9 @@ import Main from "./components/Main";
 import FavPick from "./components/FavPick";
 import RecommendedList from "./components/RecommendedList";
 import PopularList from "./components/PopularList";
+import BrowseByService from "./components/BrowseByService";
+import NetflixRoulette from "./components/NetflixRoulette";
+import WatchFindEasy from "./components/WatchFindEasy";
 
 function HomePage() {
   return (
@@ -28,6 +31,9 @@ function HomePage() {
       <FavPick title="COMMEDY MOVIES AND SHOWS" />
       <RecommendedList />
       <PopularList />
+      <BrowseByService />
+      <NetflixRoulette />
+      <WatchFindEasy />
 
       <Footer />
     </div>
