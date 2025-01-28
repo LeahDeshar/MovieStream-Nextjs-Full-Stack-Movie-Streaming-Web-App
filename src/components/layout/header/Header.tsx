@@ -1,9 +1,15 @@
+"use client";
 import { List, Search, UserRound } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 
 function Header() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const toggleModal = () => {
+    setIsModalOpen(!isModalOpen);
+  };
   return (
     <header>
       <div className="flex flex-wrap items-center justify-between bg-[#0a0f1b] p-6 px-4 sm:px-6 lg:px-[64px] shadow-2xl shadow-[#008e5d]">
@@ -37,9 +43,12 @@ function Header() {
             size={28}
           />
           <div className="hidden md:flex items-center space-x-4 sm:space-x-6 text-white font-medium">
-            <Link href="#" className="hover:text-[#00dc89] transition-all">
+            <button
+              onClick={toggleModal}
+              className="hover:text-[#00dc89] transition-all"
+            >
               Login
-            </Link>
+            </button>
             <Link href="#" className="hover:text-[#00dc89] transition-all">
               Sign Up
             </Link>
@@ -81,6 +90,127 @@ function Header() {
           Data & API
         </Link>
       </nav>
+      {isModalOpen && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-20">
+          <div className="bg-white p-6 rounded-lg shadow-lg">
+            <h2 className="text-2xl mb-4">Welcome Back!</h2>
+            <h2 className="text-2xl mb-4">Login Below</h2>
+
+            <button>CONTINUE WITH FACEBOOK</button>
+            <button>LOGIN WITH GOOGLE</button>
+            <button>LOGIN WITH APPLE</button>
+
+            <div className="flex justify-center items-center mt-4">
+              <p>Sign Up</p>
+              <p>Log In</p>
+            </div>
+            {/* Sign Up */}
+            <form className="max-w-md mx-auto">
+              <div className="relative z-0 w-full mb-5 group">
+                <input
+                  type="text"
+                  name="floating_first_name"
+                  id="floating_first_name"
+                  className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                  placeholder=" "
+                  required
+                />
+                <label
+                  htmlFor="floating_first_name"
+                  className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                >
+                  Enter Your Name
+                </label>
+              </div>
+
+              <div className="relative z-0 w-full mb-5 group">
+                <input
+                  type="email"
+                  name="floating_email"
+                  id="floating_email"
+                  className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                  placeholder=" "
+                  required
+                />
+                <label
+                  htmlFor="floating_email"
+                  className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                >
+                  Enter Your Email address
+                </label>
+              </div>
+              <div className="relative z-0 w-full mb-5 group">
+                <input
+                  type="password"
+                  name="floating_password"
+                  id="floating_password"
+                  className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                  placeholder=" "
+                  required
+                />
+                <label
+                  htmlFor="floating_password"
+                  className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                >
+                  Enter Your Password
+                </label>
+              </div>
+
+              <button
+                onClick={toggleModal}
+                type="submit"
+                className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              >
+                Submit
+              </button>
+            </form>
+
+            {/* Log In */}
+            <form className="max-w-md mx-auto">
+              <div className="relative z-0 w-full mb-5 group">
+                <input
+                  type="email"
+                  name="floating_email"
+                  id="floating_email"
+                  className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                  placeholder=" "
+                  required
+                />
+                <label
+                  htmlFor="floating_email"
+                  className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                >
+                  Email address
+                </label>
+              </div>
+              <div className="relative z-0 w-full mb-5 group">
+                <input
+                  type="password"
+                  name="floating_password"
+                  id="floating_password"
+                  className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                  placeholder=" "
+                  required
+                />
+                <label
+                  htmlFor="floating_password"
+                  className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                >
+                  Password
+                </label>
+              </div>
+
+              <button
+                onClick={toggleModal}
+                type="submit"
+                className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              >
+                Submit
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
     </header>
   );
 }
