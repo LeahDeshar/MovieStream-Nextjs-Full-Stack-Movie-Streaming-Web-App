@@ -19,11 +19,11 @@ function HomePage() {
       <FavPick title="POPULAR MOVIES" />
       <FavPick title="NEW TV SHOWS" />
       <FavPick title="TRENDING TV SHOWS" />
-      {/* <FavPick title="2024 EMMY NOMINEES" />
+      <FavPick title="2024 EMMY NOMINEES" />
       <FavPick title="NEW MOVIES" />
       <FavPick title="POPULAR TV SHOWS" />
       <FavPick title="2024 CANNES FILM FESTIVAL" />
-      <FavPick title="2024 MOST ANTICIPATED" /> */}
+      <FavPick title="2024 MOST ANTICIPATED" />
       <FavPick title="TRENDING MOVIES" />
       <FavPick title="2024 OSCAR NOMINEES" />
       <FavPick title="DRAMA MOVIES & SHOWS" />
