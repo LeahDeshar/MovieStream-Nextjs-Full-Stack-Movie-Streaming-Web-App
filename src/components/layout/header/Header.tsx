@@ -90,12 +90,13 @@ function Header() {
           Data & API
         </Link>
       </nav>
+
       {/* {isModalOpen && (
-        <div className="fixed inset-0 z-20  bg-black bg-opacity-50">
-          <div className="fixed inset-0 bg-white p-8 justify-center rounded-lg overflow-auto  ">
+        <div className="fixed  inset-0 z-20  ">
+          <div className="w-screen  h-screen   ">
             <div className="flex justify-between items-center mb-6">
               <h2 className="text-2xl font-bold text-gray-800">
-                Welcome Back!
+                {isLogin ? "Welcome Back!" : "Create an Account"}
               </h2>
               <button
                 onClick={toggleModal}
@@ -105,11 +106,6 @@ function Header() {
               </button>
             </div>
 
-            <h3 className="text-xl font-semibold text-gray-700 mb-4">
-              Login Below
-            </h3>
-
-            
             <div className="space-y-3 mb-6">
               <button className="w-full py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition">
                 Continue with Facebook
@@ -121,206 +117,245 @@ function Header() {
                 Login with Apple
               </button>
             </div>
-
-            
-            <form className="space-y-6 mb-8">
-              <div className="relative group">
-                <input
-                  type="text"
-                  name="name"
-                  id="name"
-                  className="w-full py-2 border-b border-gray-300 text-sm text-gray-700 focus:outline-none focus:border-blue-500"
-                  placeholder="Enter Your Name"
-                  required
-                />
-              </div>
-              <div className="relative group">
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  className="w-full py-2 border-b border-gray-300 text-sm text-gray-700 focus:outline-none focus:border-blue-500"
-                  placeholder="Enter Your Email Address"
-                  required
-                />
-              </div>
-              <div className="relative group">
-                <input
-                  type="password"
-                  name="password"
-                  id="password"
-                  className="w-full py-2 border-b border-gray-300 text-sm text-gray-700 focus:outline-none focus:border-blue-500"
-                  placeholder="Enter Your Password"
-                  required
-                />
-              </div>
+            <div className="flex justify-center mb-6">
               <button
-                type="submit"
-                className="w-full py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition"
+                onClick={() => setIsLogin(true)}
+                className={`px-4 py-2 font-semibold rounded-l-lg border transition ${
+                  isLogin
+                    ? "bg-blue-600 text-white"
+                    : "bg-gray-200 text-gray-700"
+                }`}
+              >
+                Login
+              </button>
+              <button
+                onClick={() => setIsLogin(false)}
+                className={`px-4 py-2 font-semibold rounded-r-lg border transition ${
+                  !isLogin
+                    ? "bg-blue-600 text-white"
+                    : "bg-gray-200 text-gray-700"
+                }`}
               >
                 Sign Up
               </button>
-            </form>
-
-         
-            <form className="space-y-6">
-              <div className="relative group">
-                <input
-                  type="email"
-                  name="login_email"
-                  id="login_email"
-                  className="w-full py-2 border-b border-gray-300 text-sm text-gray-700 focus:outline-none focus:border-blue-500"
-                  placeholder="Email Address"
-                  required
-                />
+            </div>
+            {isLogin ? (
+              <div>
+                <h3 className="text-xl font-semibold text-gray-700 mb-4">
+                  Login Below
+                </h3>
+                <form className="space-y-6">
+                  <div className="relative group">
+                    <input
+                      type="email"
+                      name="login_email"
+                      id="login_email"
+                      className="w-full py-2 border-b border-gray-300 text-sm text-gray-700 focus:outline-none focus:border-blue-500"
+                      placeholder="Email Address"
+                      required
+                    />
+                  </div>
+                  <div className="relative group">
+                    <input
+                      type="password"
+                      name="login_password"
+                      id="login_password"
+                      className="w-full py-2 border-b border-gray-300 text-sm text-gray-700 focus:outline-none focus:border-blue-500"
+                      placeholder="Password"
+                      required
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    className="w-full py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition"
+                  >
+                    Log In
+                  </button>
+                </form>
               </div>
-              <div className="relative group">
-                <input
-                  type="password"
-                  name="login_password"
-                  id="login_password"
-                  className="w-full py-2 border-b border-gray-300 text-sm text-gray-700 focus:outline-none focus:border-blue-500"
-                  placeholder="Password"
-                  required
-                />
+            ) : (
+              <div>
+                <h3 className="text-xl font-semibold text-gray-700 mb-4">
+                  Sign Up Below
+                </h3>
+                <form className="space-y-6">
+                  <div className="relative group">
+                    <input
+                      type="text"
+                      name="name"
+                      id="name"
+                      className="w-full py-2 border-b border-gray-300 text-sm text-gray-700 focus:outline-none focus:border-blue-500"
+                      placeholder="Enter Your Name"
+                      required
+                    />
+                  </div>
+                  <div className="relative group">
+                    <input
+                      type="email"
+                      name="email"
+                      id="email"
+                      className="w-full py-2 border-b border-gray-300 text-sm text-gray-700 focus:outline-none focus:border-blue-500"
+                      placeholder="Enter Your Email Address"
+                      required
+                    />
+                  </div>
+                  <div className="relative group">
+                    <input
+                      type="password"
+                      name="password"
+                      id="password"
+                      className="w-full py-2 border-b border-gray-300 text-sm text-gray-700 focus:outline-none focus:border-blue-500"
+                      placeholder="Enter Your Password"
+                      required
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    className="w-full py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition"
+                  >
+                    Sign Up
+                  </button>
+                </form>
               </div>
-              <button
-                type="submit"
-                className="w-full py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition"
-              >
-                Log In
-              </button>
-            </form>
+            )}
           </div>
         </div>
       )} */}
-      isModalOpen && (
-      <div className="fixed inset-0 z-20 bg-black bg-opacity-50 flex items-center justify-center">
-        <div className="bg-white w-full max-w-lg p-8 rounded-lg shadow-lg">
-          <div className="flex justify-between items-center mb-6">
-            <h2 className="text-2xl font-bold text-gray-800">
-              {isLogin ? "Welcome Back!" : "Create an Account"}
-            </h2>
-            <button
-              onClick={toggleModal}
-              className="text-gray-500 hover:text-gray-800 focus:outline-none"
-            >
-              ✕
-            </button>
-          </div>
 
-          <div className="space-y-3 mb-6">
-            <button className="w-full py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition">
-              Continue with Facebook
-            </button>
-            <button className="w-full py-3 bg-red-500 text-white font-semibold rounded-lg hover:bg-red-600 transition">
-              Login with Google
-            </button>
-            <button className="w-full py-3 bg-black text-white font-semibold rounded-lg hover:bg-gray-800 transition">
-              Login with Apple
-            </button>
-          </div>
-          <div className="flex justify-center mb-6">
-            <button
-              onClick={() => setIsLogin(true)}
-              className={`px-4 py-2 font-semibold rounded-l-lg border transition ${
-                isLogin ? "bg-blue-600 text-white" : "bg-gray-200 text-gray-700"
-              }`}
-            >
-              Login
-            </button>
-            <button
-              onClick={() => setIsLogin(false)}
-              className={`px-4 py-2 font-semibold rounded-r-lg border transition ${
-                !isLogin
-                  ? "bg-blue-600 text-white"
-                  : "bg-gray-200 text-gray-700"
-              }`}
-            >
-              Sign Up
-            </button>
-          </div>
-          {isLogin ? (
-            <div>
-              <h3 className="text-xl font-semibold text-gray-700 mb-4">
-                Login Below
-              </h3>
-              <form className="space-y-6">
-                <div className="relative group">
+      {isModalOpen && (
+        <div
+          className="fixed inset-0 z-20 flex items-center justify-center "
+          style={{
+            backgroundColor: " rgba(8, 17, 24, 1)",
+            backgroundImage:
+              "linear-gradient(125deg, rgba(134, 121, 249, 0.05), rgba(113, 255, 151, 0.06))",
+          }}
+        >
+          <button
+            onClick={toggleModal}
+            className="text-white bg-white/25 rounded-full px-2 py-1 hover:text-gray-400 focus:outline-none absolute top-10 right-10"
+          >
+            ✕
+          </button>
+          <div className="w-full max-w-md p-6 ">
+            <div className="text-center  mb-6">
+              {isLogin ? (
+                <>
+                  <h2 className="text-2xl font-bold text-white">
+                    Welcome Back!
+                  </h2>
+                  <h3 className="text-xl font-semibold text-white mb-4">
+                    Login Below
+                  </h3>
+                </>
+              ) : (
+                <>
+                  <h2 className="text-2xl font-bold text-white">
+                    Create an Account
+                  </h2>
+                  <h3 className="text-xl font-semibold text-white mb-4">
+                    Free forever.
+                  </h3>
+                </>
+              )}
+            </div>
+
+            <div className="space-y-3 mb-6">
+              <button className="w-full py-3 bg-[#4a90e2] text-white font-semibold rounded-3xl hover:bg-blue-700 transition">
+                Continue with Facebook
+              </button>
+              <button className="w-full py-3 bg-white text-[#4a4a4a] font-semibold rounded-3xl hover:bg-red-600 transition">
+                Login with Google
+              </button>
+              <button className="w-full py-3 bg-black text-white font-semibold rounded-3xl hover:bg-gray-800 transition">
+                Login with Apple
+              </button>
+            </div>
+
+            <div className="flex justify-center mb-6">
+              <button
+                onClick={() => setIsLogin(true)}
+                className={`px-4 py-2 font-semibold rounded-l-lg border transition ${
+                  isLogin
+                    ? "bg-blue-600 text-white"
+                    : "bg-gray-200 text-gray-700"
+                }`}
+              >
+                Login
+              </button>
+              <button
+                onClick={() => setIsLogin(false)}
+                className={`px-4 py-2 font-semibold rounded-r-lg border transition ${
+                  !isLogin
+                    ? "bg-blue-600 text-white"
+                    : "bg-gray-200 text-gray-700"
+                }`}
+              >
+                Sign Up
+              </button>
+            </div>
+
+            {isLogin ? (
+              <div>
+                <form className="space-y-6">
                   <input
                     type="email"
                     name="login_email"
-                    id="login_email"
                     className="w-full py-2 border-b border-gray-300 text-sm text-gray-700 focus:outline-none focus:border-blue-500"
                     placeholder="Email Address"
                     required
                   />
-                </div>
-                <div className="relative group">
                   <input
                     type="password"
                     name="login_password"
-                    id="login_password"
                     className="w-full py-2 border-b border-gray-300 text-sm text-gray-700 focus:outline-none focus:border-blue-500"
                     placeholder="Password"
                     required
                   />
-                </div>
-                <button
-                  type="submit"
-                  className="w-full py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition"
-                >
-                  Log In
-                </button>
-              </form>
-            </div>
-          ) : (
-            <div>
-              <h3 className="text-xl font-semibold text-gray-700 mb-4">
-                Sign Up Below
-              </h3>
-              <form className="space-y-6">
-                <div className="relative group">
+                  <button
+                    type="submit"
+                    className="w-full py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition"
+                  >
+                    Log In
+                  </button>
+                </form>
+              </div>
+            ) : (
+              <div>
+                <form className="space-y-6">
                   <input
                     type="text"
                     name="name"
-                    id="name"
                     className="w-full py-2 border-b border-gray-300 text-sm text-gray-700 focus:outline-none focus:border-blue-500"
                     placeholder="Enter Your Name"
                     required
                   />
-                </div>
-                <div className="relative group">
                   <input
                     type="email"
                     name="email"
-                    id="email"
                     className="w-full py-2 border-b border-gray-300 text-sm text-gray-700 focus:outline-none focus:border-blue-500"
                     placeholder="Enter Your Email Address"
                     required
                   />
-                </div>
-                <div className="relative group">
                   <input
                     type="password"
                     name="password"
-                    id="password"
                     className="w-full py-2 border-b border-gray-300 text-sm text-gray-700 focus:outline-none focus:border-blue-500"
                     placeholder="Enter Your Password"
                     required
                   />
-                </div>
-                <button
-                  type="submit"
-                  className="w-full py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition"
-                >
-                  Sign Up
-                </button>
-              </form>
-            </div>
-          )}
+                  <button
+                    type="submit"
+                    className="w-full py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition"
+                  >
+                    Sign Up
+                  </button>
+                </form>
+              </div>
+            )}
+          </div>
         </div>
-      </div>
+      )}
     </header>
   );
 }
