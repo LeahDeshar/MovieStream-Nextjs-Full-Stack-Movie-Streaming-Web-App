@@ -6,10 +6,16 @@ import React, { useState } from "react";
 
 function Header() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isCreateListOpen, setCreateListOpen] = useState(false);
+
   const [isLogin, setIsLogin] = useState(true);
 
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
+  };
+
+  const handleCreateList = () => {
+    setCreateListOpen(!isCreateListOpen);
   };
   return (
     <header>
@@ -57,7 +63,7 @@ function Header() {
           <button className="bg-gradient-to-r from-[#00ffb3] via-[#00dc89] to-[#008e5d] px-4 sm:px-5 py-2 rounded-full text-black font-semibold shadow-lg hover:shadow-xl hover:from-[#00dc89] hover:to-[#00bf76] transition-all transform hover:scale-105 text-sm sm:text-base">
             <div className="flex items-center space-x-2">
               <List size={20} />
-              <span>Create A List</span>
+              <button onClick={handleCreateList}>Create A List</button>
             </div>
           </button>
         </div>
@@ -356,6 +362,21 @@ function Header() {
           </div>
         </div>
       )}
+
+      {/* {isCreateListOpen && (
+        <div className="bg-black w-full h-screen absolute top-0 ">
+          <div
+            className="fixed inset-0 z-20  min-w-[360px] max-w-[360px]"
+            style={{
+              backgroundColor: " rgba(8, 17, 24, 1)",
+              backgroundImage:
+                "linear-gradient(125deg, rgba(134, 121, 249, 0.05), rgba(113, 255, 151, 0.06))",
+            }}
+          >
+            <p>HEllo</p>
+          </div>
+        </div>
+      )} */}
     </header>
   );
 }
