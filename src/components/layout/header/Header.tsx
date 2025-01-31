@@ -363,7 +363,7 @@ function Header() {
         </div>
       )}
 
-      {isCreateListOpen && (
+      {/* {isCreateListOpen && (
         <div className="bg-black w-full h-screen absolute top-0 ">
           <div
             className="fixed inset-0 z-20  min-w-[360px] max-w-[360px]"
@@ -376,7 +376,7 @@ function Header() {
             <p>HEllo</p>
           </div>
         </div>
-      )}
+      )} */}
     </header>
   );
 }
