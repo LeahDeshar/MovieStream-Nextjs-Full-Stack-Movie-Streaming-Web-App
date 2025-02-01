@@ -17,6 +17,13 @@ function Header() {
   const handleCreateList = () => {
     setCreateListOpen(!isCreateListOpen);
   };
+
+  const [dropdown, setDropdown] = useState(null);
+
+  const toggleDropdown = (menu) => {
+    setDropdown(dropdown === menu ? null : menu);
+  };
+
   return (
     <header>
       <div className="flex flex-wrap items-center justify-between bg-[#0a0f1b] p-6 px-4 sm:px-6 lg:px-[64px] shadow-2xl shadow-[#008e5d]">
@@ -68,7 +75,7 @@ function Header() {
           </button>
         </div>
       </div>
-      <nav className="flex flex-wrap justify-between items-center px-4 sm:px-6 lg:px-[64px] bg-[#0a0f1b] text-gray-300 font-semibold pt-2 pb-4 shadow-inner">
+      {/* <nav className="flex flex-wrap justify-between items-center px-4 sm:px-6 lg:px-[64px] bg-[#0a0f1b] text-gray-300 font-semibold pt-2 pb-4 shadow-inner">
         <div className="flex flex-wrap justify-center items-center space-x-4 sm:space-x-6 lg:space-x-8 mb-4 lg:mb-0">
           <Link
             href="#"
@@ -88,6 +95,53 @@ function Header() {
           >
             New, Coming, Leaving
           </Link>
+        </div>
+        <Link
+          href="#"
+          className="hover:text-[#00dc89] transition-all hover:underline underline-offset-4 decoration-2"
+        >
+          Data & API
+        </Link>
+      </nav> */}
+
+      <nav className="flex flex-wrap justify-between items-center px-4 sm:px-6 lg:px-[64px] bg-[#0a0f1b] text-gray-300 font-semibold pt-2 pb-4 shadow-inner">
+        <div className="flex flex-wrap justify-center items-center space-x-4 sm:space-x-6 lg:space-x-8 mb-4 lg:mb-0">
+          {[
+            {
+              label: "TV Shows",
+              submenu: ["Popular", "Trending", "Top Rated"],
+            },
+            {
+              label: "Movies",
+              submenu: ["Now Playing", "Upcoming", "Top Rated"],
+            },
+            {
+              label: "New, Coming, Leaving",
+              submenu: ["New Arrivals", "Coming Soon", "Leaving Soon"],
+            },
+          ].map((item) => (
+            <div key={item.label} className="relative">
+              <button
+                onClick={() => toggleDropdown(item.label)}
+                className="hover:text-[#00dc89] transition-all hover:underline underline-offset-4 decoration-2"
+              >
+                {item.label}
+              </button>
+              {dropdown === item.label && (
+                <div className="absolute left-0 mt-2 w-48 bg-gray-800 text-white rounded-md shadow-lg z-50">
+                  {item.submenu.map((sub) => (
+                    <Link
+                      key={sub}
+                      href="#"
+                      className="block px-4 py-2 hover:bg-gray-700"
+                    >
+                      {sub}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
         </div>
         <Link
           href="#"
