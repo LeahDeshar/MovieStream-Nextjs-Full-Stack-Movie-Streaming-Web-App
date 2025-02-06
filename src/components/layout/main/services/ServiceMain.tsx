@@ -1,5 +1,5 @@
 "use client";
-import { Search } from "lucide-react";
+import { Plus, Search } from "lucide-react";
 import React, { useState } from "react";
 
 function ServiceMain() {
@@ -79,6 +79,14 @@ function ServiceMain() {
               </div>
             </div>
           )}
+
+          <div className="flex justify-between pt-10">
+            <h2>Most Popular</h2>
+
+            <button className="bg-white bg-opacity-35 rounded-2xl flex px-5 py-1">
+              <Plus /> Add All
+            </button>
+          </div>
         </div>
       </div>
     </div>
