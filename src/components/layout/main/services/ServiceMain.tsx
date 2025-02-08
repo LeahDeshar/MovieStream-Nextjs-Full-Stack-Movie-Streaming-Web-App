@@ -11,7 +11,7 @@ function ServiceMain() {
     setDropdown(dropdown === menu ? null : menu);
   };
   return (
-    <div className="flex flex-col  items-center py-10 pt-20">
+    <div className="flex flex-col  items-center py-10 pt-20 ">
       <div className="w-[50%]">
         <h1 className="text-2xl text-white text-center">
           Combine Your Services
@@ -81,13 +81,81 @@ function ServiceMain() {
           )}
 
           <div className="flex justify-between pt-10">
-            <h2>Most Popular</h2>
+            <h2 className="text-white">Most Popular</h2>
 
             <button className="bg-white bg-opacity-35 rounded-2xl flex px-5 py-1">
               <Plus /> Add All
             </button>
           </div>
         </div>
+      </div>
+      <div className="w-full px-28 grid grid-cols-3 gap-10 ">
+        {[
+          {
+            name: "Netflix",
+            logo: "/images/home/browsebyservice/netflix.svg",
+            link: "https://www.netflix.com/",
+          },
+          {
+            name: "Netflix",
+            logo: "/images/home/browsebyservice/netflix.svg",
+            link: "https://www.netflix.com/",
+          },
+          {
+            name: "Netflix",
+            logo: "/images/home/browsebyservice/netflix.svg",
+            link: "https://www.netflix.com/",
+          },
+          {
+            name: "Netflix",
+            logo: "/images/home/browsebyservice/netflix.svg",
+            link: "https://www.netflix.com/",
+          },
+          {
+            name: "Netflix",
+            logo: "/images/home/browsebyservice/netflix.svg",
+            link: "https://www.netflix.com/",
+          },
+          {
+            name: "Netflix",
+            logo: "/images/home/browsebyservice/netflix.svg",
+            link: "https://www.netflix.com/",
+          },
+          {
+            name: "Netflix",
+            logo: "/images/home/browsebyservice/netflix.svg",
+            link: "https://www.netflix.com/",
+          },
+          {
+            name: "Netflix",
+            logo: "/images/home/browsebyservice/netflix.svg",
+            link: "https://www.netflix.com/",
+          },
+          {
+            name: "Netflix",
+            logo: "/images/home/browsebyservice/netflix.svg",
+            link: "https://www.netflix.com/",
+          },
+        ].map((movie, index) => (
+          <div
+            className="flex items-center justify-between border-b-2 border-gray-800 py-5"
+            key={index}
+          >
+            <div className="flex items-center space-x-5">
+              <img
+                src={movie.logo}
+                alt={movie.name}
+                className="w-12 h-9 rounded-md"
+              />
+              <div>
+                <h3 className="text-white">{movie.name}</h3>
+              </div>
+            </div>
+            <button className="px-5 py-1">
+              <Plus color="white" />
+            </button>
+          </div>
+        ))}
       </div>
     </div>
   );
